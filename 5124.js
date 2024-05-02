@@ -7,3 +7,22 @@
 function getAge(inputString){
     return +inputString[0]
 }
+
+// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+// If the function is passed a valid PIN string, return true, else return false. 
+
+function validatePIN(pin) {
+  return /^(\d{4}|\d{6})$/.test(pin)
+}
+
+// Write a function which calculates the average of the numbers in a given list.
+
+// Note: Empty arrays should return 0.
+
+function findAvg(array) {
+    if (array.length === 0) {
+        return 0;
+    }
+    return array.reduce((acc, c) => acc + c, 0) / array.length;
+}
