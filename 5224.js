@@ -89,3 +89,7 @@ function repeatStr(n, s) {
 function filter_list(l) {
     return l.filter(item => typeof item === 'number');
 }
+or
+function filter_list(l) {
+    return l.filter(Number.isInteger);
+  }
