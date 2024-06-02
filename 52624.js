@@ -114,3 +114,4 @@ for (let num = a; num <= b; num++) {
 }
 
 return result;  // Return the final result array
+ 
