@@ -1,0 +1,128 @@
+Jamie is a programmer, and James' girlfriend. She likes diamonds, and wants a diamond string from James. Since James doesn't know how to make this happen, he needs your help.
+
+Task
+You need to return a string that looks like a diamond shape when printed on the screen, using asterisk (*) characters. Trailing spaces should be removed, and every line must be terminated with a newline character (\n).
+
+Return null/nil/None/... if the input is an even number or negative, as it is not possible to print a diamond of even or negative size.
+
+Examples
+A size 3 diamond:
+
+ *
+***
+ *
+...which would appear as a string of " *\n***\n *\n"
+
+A size 5 diamond:
+
+  *
+ ***
+*****
+ ***
+  *
+...that is:
+
+"  *\n ***\n*****\n ***\n  *\n"
+
+
+
+
+function diamond(n){
+if(n<=0 || n%2 ===0)
+return null
+
+str = ''
+  for (let i = 0; i < n; i++) { 
+    let len = Math.abs((n-2*i-1)/2)
+    str += ' '.repeat(len)
+    str += '*'.repeat(n-2*len)
+    str += '\n'
+  }
+  return str
+}
+
+________________________________________________________________________________________________________________
+Your task is to construct a building which will be a pile of n cubes. The cube at the bottom will have a volume of 
+n
+3
+n 
+3
+ , the cube above will have volume of 
+(
+n
+−
+1
+)
+3
+(n−1) 
+3
+  and so on until the top which will have a volume of 
+1
+3
+1 
+3
+ .
+
+You are given the total volume m of the building. Being given m can you find the number n of cubes you will have to build?
+
+The parameter of the function findNb (find_nb, find-nb, findNb, ...) will be an integer m and you have to return the integer n such as 
+n
+3
++
+(
+n
+−
+1
+)
+3
++
+(
+n
+−
+2
+)
+3
++
+.
+.
+.
++
+1
+3
+=
+m
+n 
+3
+ +(n−1) 
+3
+ +(n−2) 
+3
+ +...+1 
+3
+ =m if such a n exists or -1 if there is no such n.
+
+Examples:
+findNb(1071225) --> 45
+
+findNb(91716553919377) --> -1
+
+Ans: function findNb(m) {
+    let n = 0;
+    let totalVolume = 0;
+
+    while (totalVolume < m) {
+        n++;
+        totalVolume += Math.pow(n, 3); // Add the volume of the next cube
+    }
+
+    return totalVolume === m ? n : -1;
+}
+____________________________________________________________________________________________
+Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+Examples
+"This is an example!" ==> "sihT si na !elpmaxe"
+"double  spaces"      ==> "elbuod  secaps"
+
+function reverseWords(str){
+return str.split('').reverse().join('').split(' ').reverse().join(' ')
