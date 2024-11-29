@@ -1,0 +1,38 @@
+Create a function with two arguments that will return an array of the first n multiples of x.
+
+Assume both the given number and the number of times to count will be positive numbers greater than 0.
+
+Return the results as an array or list ( depending on language ).
+
+Examples
+x = 1, n = 10 --> [1,2,3,4,5,6,7,8,9,10]
+x = 2, n = 5  --> [2,4,6,8,10]
+
+function countBy(x,n){
+var z = [];
+for(i = 1; i<=n; i++){
+z.push(x*i);
+}
+return z;
+}
+
+_----------------------------------------------------------------------------------------------------------------------------
+What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?
+
+Example(Input --> Output)
+
+"apple ban" --> ["apple 5", "ban 3"]
+"you will win" -->["you 3", "will 4", "win 3"]
+Your task is to write a function that takes a String and returns an Array/list with the length of each word added to each element .
+
+Note: String will have at least one element; words will always be separated by a space.
+
+function addLength(str){
+const split = str.split(' ')
+const res = []
+
+for(i=0; i < split.length; i++){
+res.push( split[i] + ' ' + split[i].length)
+}
+return res
+}
