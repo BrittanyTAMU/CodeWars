@@ -1,0 +1,96 @@
+Is the string uppercase?
+Task
+Create a method to see whether the string is ALL CAPS.
+
+Examples (input -> output)
+"c" -> False
+"C" -> True
+"hello I AM DONALD" -> False
+"HELLO I AM DONALD" -> True
+"ACSKLDFJSgSKLDFJSKLDFJ" -> False
+"ACSKLDFJSGSKLDFJSKLDFJ" -> True
+In this Kata, a string is said to be in ALL CAPS whenever it does not contain any lowercase letter so any string containing no letters at all is trivially considered to be in ALL CAPS.
+
+
+String.prototype.isUpperCase = function() {
+ const string = String(this)
+ return string = string.toUpperCase()
+ }
+---------------------------------------------------------------------------------------
+ Task
+Your task is to return the correct string using the Template String Feature.
+Input
+Two Strings, no validation is needed.
+Output
+You must output a string containing the two strings with the word ```' are '```
+Reference: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/template_strings
+
+var templateStrings = function(obj, feature) {
+  return `${obj} are ${feature}`
+}
+
+----------------------------------------------------------------------------------------------------
+Given an array of numbers, check if any of the numbers are the character codes for lower case vowels (a, e, i, o, u).
+
+If they are, change the array value to a string of that vowel.
+
+Return the resulting array.
+
+function isVow(a){
+return a.map(i => {
+if (String.fromCharCode(i) === 'a')
+return 'a';
+else if (String.fromCharCode(i) === 'e')
+return 'e';
+else if (String.fromCharCode(i) === 'i')
+return 'i';
+else if (String.fromCharCode(i) === 'o')
+return 'o';
+else if (String.fromCharCode(i) === 'u')
+return 'u';
+else 
+return i;
+
+})
+}
+-----------------------------------------------------------------------------------------------------
+You get any card as an argument. Your task is to return the suit of this card (in lowercase).
+
+Our deck (is preloaded):
+
+('3♣') -> return 'clubs'
+('3♦') -> return 'diamonds'
+('3♥') -> return 'hearts'
+('3♠') -> return 'spades'
+
+function defineSuit(card) {
+  switch (card.slice(-1)){
+    case '♣': return 'clubs';
+    case '♦': return 'diamonds';
+    case '♥': return 'hearts';
+    case '♠': return 'spades';    
+  }
+    
+}
+
+---------------------------------------------------------------------------------------
+This is a spin off of my first kata.
+
+You are given a string containing a sequence of character sequences separated by commas.
+
+Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+
+If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+
+Examples
+"1,2,3"      =>  "2"
+"1,2,3,4"    =>  "2 3"
+"1,2,3,4,5"  =>  "2 3 4"
+
+""     =>  NULL
+"1"    =>  NULL
+"1,2"  =>  NULL
+
+function array(arr){
+  return arr.split(",").slice(1,-1).join(" ") || null;
+}
