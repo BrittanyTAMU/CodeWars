@@ -1,0 +1,67 @@
+You can print your name on a billboard ad. Find out how much it will cost you. Each character has a default price of £30, but that can be different if you are given 2 parameters instead of 1 (allways 2 for Java).
+
+You can not use multiplier "*" operator.
+
+If your name would be Jeong-Ho Aristotelis, ad would cost £600. 20 leters * 30 = 600 (Space counts as a character).
+
+solution: 
+
+function billboard(name, price = 30){
+return name.split('').reduce((letter, sum)=> price + sum, 0)
+}
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Oh no! Timmy hasn't followed instructions very carefully and forgot how to use the new String Template feature, Help Timmy with his string template so it works as he expects!
+solution: 
+function buildString(...template){
+  return `I like ${template.join(', ')}!`;
+}
+--------------------------------------------------------------------------------------------------------------------
+This is a spin off of my first kata.
+
+You are given a string containing a sequence of character sequences separated by commas.
+
+Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+
+If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+
+Examples
+"1,2,3"      =>  "2"
+"1,2,3,4"    =>  "2 3"
+"1,2,3,4,5"  =>  "2 3 4"
+
+""     =>  NULL
+"1"    =>  NULL
+"1,2"  =>  NULL
+
+solution:
+return string.split(',').slice(1,-1).join(' ') || null
+-----------------------------------------------------------------------------------------------------------------------------
+The company you work for has just been awarded a contract to build a payment gateway. In order to help move things along, you have volunteered to create a function that will take a float and return the amount formatting in dollars and cents.
+
+39.99 becomes $39.99
+
+The rest of your team will make sure that the argument is sanitized before being passed to your function although you will need to account for adding trailing zeros if they are missing (though you won't have to worry about a dangling period).
+
+Examples:
+
+3 needs to become $3.00
+
+3.1 needs to become $3.10
+Good luck! Your team knows they can count on you!
+
+solution: 
+function formatMoney(amount){
+  return '$' + amount.toFixed(2);
+  }
+  ---------------------------------------------------------------------------------------------------------------------------
+  You will be given a list of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+
+The returned value must be a string, and have "***" between each of its letters.
+
+You should not remove or add elements from/to the array.
+
+solution:
+function twoSort(s) {
+  return s.sort()[0].split('').join('***');
+}
