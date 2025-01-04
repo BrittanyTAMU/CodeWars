@@ -1,0 +1,77 @@
+You have an award-winning garden and every day the plants need exactly 40mm of water. You created a great piece of JavaScript to calculate the amount of water your plants will need when you have taken into consideration the amount of rain water that is forecast for the day. Your jealous neighbour hacked your computer and filled your code with bugs.
+
+Your task is to debug the code before your plants die!
+
+solution: function rainAmount(mm){
+    if ( mm < 40) {
+         return "You need to give your plant " + (40 - mm) + "mm of water"
+    } else {
+         return "Your plant has had more than enough water for today!"
+    }
+}
+-------------------------------------------------------------------------------------------
+Task
+Create a method to see whether the string is ALL CAPS.
+
+Examples (input -> output)
+"c" -> False
+"C" -> True
+"hello I AM DONALD" -> False
+"HELLO I AM DONALD" -> True
+"ACSKLDFJSgSKLDFJSKLDFJ" -> False
+"ACSKLDFJSGSKLDFJSKLDFJ" -> True
+In this Kata, a string is said to be in ALL CAPS whenever it does not contain any lowercase letter so any string containing no letters at all is trivially considered to be in ALL CAPS.
+
+solution:
+String.prototype.isUpperCase = function() {
+  const string = String(this);
+  
+  return string === string.toUpperCase();
+}
+---------------------------------------------------------------------------------------------
+Given an array of numbers, check if any of the numbers are the character codes for lower case vowels (a, e, i, o, u).
+
+If they are, change the array value to a string of that vowel.
+
+Return the resulting array.
+function isVow(a){
+return a.map(i => {
+if (String.fromCharCode(i) === 'a')
+return 'a';
+else if (String.fromCharCode(i) === 'e')
+return 'e';
+else if (String.fromCharCode(i) === 'i')
+return 'i';
+else if (String.fromCharCode(i) === 'o')
+return 'o';
+else if (String.fromCharCode(i) === 'u')
+return 'u';
+else 
+return i;
+})
+}
+----------------------------------------------------------------------------------------------------
+You can print your name on a billboard ad. Find out how much it will cost you. Each character has a default price of £30, but that can be different if you are given 2 parameters instead of 1 (allways 2 for Java).
+
+You can not use multiplier "*" operator.
+
+If your name would be Jeong-Ho Aristotelis, ad would cost £600. 20 leters * 30 = 600 (Space counts as a character).
+solution:
+function billboard(name, price = 30) {
+  return name.split('').reduce((sum, letter) => sum + price, 0); 
+}
+------------------------------------------------------------------------------------------------------------------------------
+You need to write a function that reverses the words in a given string. Words are always separated by a single space.
+
+As the input may have trailing spaces, you will also need to ignore unneccesary whitespace.
+
+Example (Input --> Output)
+
+"Hello World" --> "World Hello"
+"Hi There." --> "There. Hi"
+Happy coding!
+solution:
+function reverse(string){
+  //your code here
+  return string.split(' ').reverse().join(' ')
+}
