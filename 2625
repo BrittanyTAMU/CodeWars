@@ -1,0 +1,19 @@
+Given an array of integers as strings and numbers, return the sum of the array values as if they were all numbers
+
+solution:
+P:
+no neg nums, no floated or dec values
+
+R:
+return -> sum (string and num)
+E:
+return '3' + 3 = 6
+
+P:
+//convert strings to num (map)
+//reduce .reduce((a,c) a + c, 0)
+
+function sumMix(arr){
+  return arr.map(Number).reduce((a,c) => a + c, 0)
+}
+
