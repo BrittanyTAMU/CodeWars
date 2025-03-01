@@ -1,0 +1,9 @@
+//size -> num, no letters, will nev be empty, no special char, pos, no floats, no int, no funny biz
+//return -> size(4)-> '1010' alt '1' and '0'
+//size(5) -> '10101' || size(1) -> '1' size(8)-> '10101010'
+//function stringy(size){
+//use .repeat
+return '10'.repeat(Math.ceil(size/2)).slice(0,size)
+}
+
+//console.log(string(4))
